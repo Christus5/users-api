@@ -1,0 +1,23 @@
+.tableWrapper {
+    border-collapse: collapse;
+    color:rgb(78, 85, 122);
+
+    thead {
+        background-color: rgb(238, 238, 238);
+        color:rgb(115, 122, 163);
+    }
+
+    th, td {
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .row {
+        border-bottom: 0.5px solid rgb(115, 122, 163);
+    }
+
+    .round-img {
+        width: 50px;
+        border-radius: 50%;
+    }
+}
