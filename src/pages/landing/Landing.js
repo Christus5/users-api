@@ -4,7 +4,6 @@ import Grid from '../../components/Grid/Grid';
 
 import './Landing.style.scss';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
     users: state.users,
@@ -18,7 +17,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 const Landing = (props) => {
     const { assignUsers, users } = props;
-    //const [users, setUsers] = useState([]);
     const [grid, toggleGrid] = useState(false);
 
     useEffect(() => {
@@ -27,7 +25,6 @@ const Landing = (props) => {
                 .then(res => res.json())
                 .then(d => {
                     assignUsers(d.data);
-                    //setUsers(d.data)
                 });
         };
 
@@ -43,7 +40,7 @@ const Landing = (props) => {
         {
             title: "Name",
             dataKey: 'login',
-            render: text => text
+            render: text => <a key={text} href={`https://github.com/${text}`}>{text}</a>
         },
         {
             title: "Type",
@@ -89,7 +86,7 @@ const Landing = (props) => {
                     </div>
                 </header>
                 {grid ? (
-                    <Grid dataSource={users} />
+                    <Grid dataSource={users} columnCount={2}/>
                 ) : (
                         <Table columns={columns} dataSource={users} rowKey={'login'} />
                     )}

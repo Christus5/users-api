@@ -6,6 +6,8 @@ import {
 import MenuBar from './components/MenuBar/MenuBar';
 import Landing from './pages/landing/Landing';
 import AppProvider from './AppProvider';
+import './App.style.scss';
+
 
 const App = () => {
   return (
