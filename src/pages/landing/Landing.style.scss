@@ -1,0 +1,51 @@
+.page {
+    box-sizing: border-box;
+    align-items: center;
+    width: 100vw;
+
+    header {
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .search-bar {
+            display: inline-block;
+            border-radius: 20px;
+            padding: 1.2em 0;
+            box-shadow: 0 0 10px -5px black;
+
+            input {
+                float: left;
+                margin-left: 1em;
+                border: 0;
+            }
+
+            input:focus {
+                outline: none;
+            }
+            
+            button {
+                float: right;
+                margin-right: 1em;
+            }
+        }
+
+        h2 {
+            display: block;
+            width: 100%;
+            margin-bottom: 0.4em;
+        }
+    }
+
+    section { 
+        background-color: white;
+        margin: 0 auto;
+        padding: 20px;
+        
+        Table {
+            margin: 0 auto;
+            box-shadow: 0 0 10px -5px black;
+        }
+    }
+}

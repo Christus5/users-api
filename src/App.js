@@ -4,6 +4,7 @@ import {
   Switch, Route
 } from 'react-router-dom';
 import MenuBar from './components/MenuBar/MenuBar';
+import Landing from './pages/landing/Landing';
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <MenuBar/>
       <Router>
         <Switch>
-          <Route path={'/'} exact />
+          <Route path={'/'} exact component={Landing}/>
           <Route path={'/user'} />
         </Switch>
       </Router>
