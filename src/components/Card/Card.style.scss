@@ -1,0 +1,23 @@
+.card {
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px -5px black;
+    padding: 10px;
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a:visited {
+        color: blue;
+    }
+
+    li {
+        list-style: none;
+    }
+}
