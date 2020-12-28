@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './MenuBar.style.css';
+import './MenuBar.style.scss';
 
 
 const MenuBar = () => {
