@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import MenuBar from './components/MenuBar/MenuBar';
 import Landing from './pages/landing/Landing';
+import User from './pages/user/User';
 import AppProvider from './AppProvider';
 import './App.style.scss';
 
@@ -18,7 +19,7 @@ const App = () => {
         <Router>
           <Switch>
             <Route path={'/'} exact component={Landing} />
-            <Route path={'/user'} />
+            <Route path={'/user'} component={User}/>
           </Switch>
         </Router>
 
