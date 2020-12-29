@@ -4,10 +4,7 @@ import Card from '../Card/Card';
 import './Grid.style.scss';
 
 
-const Grid = ({dataSource, columnCount}) => {
-
-    const columnTemplate = ('1f ').repeat(columnCount);
-    
+const Grid = ({dataSource}) => {
 
     const items = dataSource.map(data => <Card avatar_url={data.avatar_url}
                                             login={data.login}
@@ -17,7 +14,11 @@ const Grid = ({dataSource, columnCount}) => {
 
     return (
         <div className={'grid'}>
-            {items}
+            {items.length === 0 ? (
+                <h1>No data</h1>
+            ) : (
+                items
+            )}
         </div>
     );
 }

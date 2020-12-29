@@ -19,9 +19,19 @@ const searching = (state = false, action) => {
     };
 };
 
+const found = (state = [], action) => {
+    switch(action.type){
+        case 'ASSIGN_FOUND':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+
 const reducers = combineReducers({
     users: users,
-    searching: searching
+    searching: searching,
+    found: found
 });
 
 export default reducers;

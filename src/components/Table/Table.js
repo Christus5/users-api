@@ -9,7 +9,7 @@ const Table = ({ columns, dataSource, rowKey, loading, pageSize }) => {
     const titles = columns.map(column => {
         const { title, dataKey } = column;
 
-        return (<th key={dataKey} style={{width: column.width}}>{title}</th>);
+        return (<th key={dataKey} style={{ width: column.width }}>{title}</th>);
     });
 
     const rows = dataSource.map(data => {
@@ -17,27 +17,37 @@ const Table = ({ columns, dataSource, rowKey, loading, pageSize }) => {
 
         columns.forEach(column => {
             let { dataKey } = column
-            row.push(<td key={dataKey} style={{width: column.width}}>{column.render(data[dataKey])}</td>)
+            row.push(<td key={dataKey} style={{ width: column.width }}>{column.render(data[dataKey])}</td>)
         });
 
         return <tr key={data[rowKey]} className={'row'}>{row}</tr>
     })
 
     return (
-        <table className='tableWrapper'>
-            <thead>
-                <tr>
-                    {titles}
-                </tr>
-            </thead>
+        <>
             {loading ? (
-                <h2>Loading...</h2>
-            ) : (
-                    <tbody>
-                        { rows}
-                    </tbody>
+                <>
+                    <table className='tableWrapper'>
+                        <thead>
+                            <tr>
+                                {titles}
+                            </tr>
+                        </thead>
+                    </table>
+                    <h1>Loading...</h1>
+                </>) : (
+                    <table className='tableWrapper'>
+                        <thead>
+                            <tr>
+                                {titles}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {rows.length === 0 ? <tr><td>No data</td></tr> : rows}
+                        </tbody>
+                    </table >
                 )}
-        </table >
+        </>
     );
 };
 

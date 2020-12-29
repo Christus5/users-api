@@ -3,39 +3,12 @@
     align-items: center;
     width: 100vw;
     background-color: rgb(238, 237, 237);
-    padding-bottom: 200px;
+    padding: 5vh 0;
+    min-height: 75vh;
 
     header {
         padding: 2em 0;
         text-align: center;
-
-        .search-bar {
-            display: inline-block;
-            border-radius: 20px;
-            padding: 1.2em 0;
-            box-shadow: 0 0 10px -5px black;
-            background-color: white;
-            
-            input {
-                float: left;
-                margin-left: 1em;
-                margin-top: 5px;
-                border: 0;
-                height: 100%;
-                width: 70%;
-            }
-
-            input:focus {
-                outline: none;
-            }
-            
-            .search-icon {
-                display: block;
-                float: right;
-                margin-right: 0.3em;
-                cursor: pointer;
-            }
-        }
     }
 
     section {
