@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Table from '../../components/Table/Table';
 import Grid from '../../components/Grid/Grid';
+import { Link } from 'react-router-dom';
+import config from '../../config';
 
 import './Landing.style.scss';
 import { connect } from 'react-redux';
@@ -23,10 +25,11 @@ const Landing = (props) => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            await fetch('http://localhost:3000/users')
+            const { api } = config.dev;
+            await fetch(`${api}/users`)
                 .then(res => res.json())
                 .then(d => {
-                    assignUsers(d.data);
+                    assignUsers(d);
                     setLoadnig(false);
                 });
         };
@@ -45,7 +48,7 @@ const Landing = (props) => {
             title: "Name",
             dataKey: 'login',
             width: '20%',
-            render: text => <a key={text} href={`https://github.com/${text}`}>{text}</a>
+            render: text => <Link key={text} to={`/user/${text}`}>{text}</Link>
         },
         {
             title: "Type",

@@ -19,7 +19,7 @@ const App = () => {
         <Router>
           <Switch>
             <Route path={'/'} exact component={Landing} />
-            <Route path={'/user'} component={User}/>
+            <Route path={'/user/:login'} component={User}/>
           </Switch>
         </Router>
 
